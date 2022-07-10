@@ -1,0 +1,26 @@
+{
+  "name": "banmoi-rewrite",
+  "version": "0.0.1",
+  "description": "LMAO GI?",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KenjiKobayashi126/banmoi-rewrite.git"
+  },
+  "keywords": [
+    "banmoi"
+  ],
+  "author": "Kobayashi Kenji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KenjiKobayashi126/banmoi-rewrite/issues"
+  },
+  "homepage": "https://github.com/KenjiKobayashi126/banmoi-rewrite#readme",
+  "dependencies": {
+    "discord.js": "^13.8.1"
+  }
+}

@@ -1,0 +1,1 @@
+const { Intents } = require("discord.js");
