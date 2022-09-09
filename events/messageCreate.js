@@ -35,6 +35,13 @@ if(message.author.bot) return;
   
     }
 
-command.run(client, message, args, prefix)
-}  
+  try {
+    command.run(client, message, args, prefix)
+  }
+  catch (error) {
+    console.log(error)
+    // lmeo lỗi code kìa haha
+    // no need anticrash.js anymore
+  }
+}
 );

@@ -65,7 +65,13 @@ client.on("interactionCreate", async (interaction) => {
     }
 }
 
-
+    // see events/messageCreate.js L:38
+    try {
         cmd.run(client, interaction, args);
+    }
+    catch (error) {
+        console.log(error)
+    }
+    
     }
   })
