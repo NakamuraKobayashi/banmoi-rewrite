@@ -1,9 +1,9 @@
-const Color = "RANDOM", Discord = require("discord.js");
+const Discord = require("discord.js");
 
-function qr(client, message, args) {
+async function qr(client, message, args) {
     const Msg = args.join("+");
     const Embed = new Discord.MessageEmbed()
-        .setColor(Color)
+        .setColor("RANDOM")
         .setImage(encodeURI(`https://chart.googleapis.com/chart?chl=${Msg}&chs=200x200&cht=qr&chld=H%7C0`))
         .setTimestamp();
 
