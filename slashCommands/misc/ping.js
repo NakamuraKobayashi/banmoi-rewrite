@@ -10,9 +10,9 @@ module.exports = {
 
   run: async function(client, interaction, args) {
 
-    const msg = await interaction.channel.send("<a:load:1003146806496067654> | Checking...");
+    const msg = await interaction.reply("<a:load:1003146806496067654> | Checking...");
 
-    const botLatency = pm(msg.createdTimestamp - interaction.createdTimestamp)
+     const botLatency = pm(interaction.createdTimestamp)
     const shardLatency = pm(interaction.guild.shard.ping);
 
 
@@ -33,7 +33,7 @@ module.exports = {
       })
       .setColor(`#b89653`)
 setTimeout(() => {
-  msg.delete()
+
     interaction.editReply({ embeds: [embed], allowedMentions : {parse: []} })
 },1000)
   }
