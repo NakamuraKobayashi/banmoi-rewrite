@@ -35,7 +35,7 @@ options: [
       required: true,
   }
 ],
-  description: "Trả về văn bản đã cung cấp ở dạng biểu tượng cảm xúc||Có dùng Tiếng Việt nhưng không dấu 🐧||.",
+  description: "Trả về văn bản đã cung cấp ở dạng biểu tượng cảm xúc.",
   run: async (client, interaction,args) => {
   const e =  args
         .join(" ")
