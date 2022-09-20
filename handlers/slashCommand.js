@@ -1,25 +1,34 @@
-let slash = []
 const { readdirSync } = require("fs");
 const ascii = require("ascii-table");
-let table = new ascii("Slash Commands");
-table.setHeading('Slash Command', ' Load status');
-module.exports = (client) => {
+
+function load_slash_commands() {
+
+    let table = new ascii("Slash Commands");
+    table.setHeading('Slash Command', ' Load status');
+
+    let slash_commands = []
+
     readdirSync("./slashCommands/").forEach(dir => {
         const commands = readdirSync(`./slashCommands/${dir}/`).filter(file => file.endsWith(".js"));
+
         for (let file of commands) {
-            let pull = require(`../slashCommands/${dir}/${file}`);
-            if (pull.name) {
-                client.slashCommands.set(pull.name, pull);
-                slash.push(pull);
+            let command = require(`../slashCommands/${dir}/${file}`);
+            if (command.name) {
+                slash_commands.push(command);
                 table.addRow(file, '✅');
             } else {
                 table.addRow(file, `🚫`);
                 continue;
-             }
-          }
+            }
+        }
     });
-    console.log(table.toString());
-client.on("ready",async ()=> {
-    await client.application.commands.set(slash)
- })
+
+    return {
+        table,
+        slash_commands
+    }
+}
+
+module.exports = {
+    load_slash_commands
 }
