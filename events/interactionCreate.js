@@ -97,13 +97,6 @@ if(fetchBlacklist) {
 }
         cmd.run(client, interaction, args);
     }
+  }
   })
-
-    }
 }
-
-module.exports = {
-    name: "interactionCreate",
-    func: interactionCreate
-}
-
